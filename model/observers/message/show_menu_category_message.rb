@@ -26,17 +26,17 @@ class ShowMenuCategoryMessage
                 {
                     "type": "postback",
                     "label": "丼",
-                    "data": "action=ordercategory=DON"
+                    "data": "action=show_menu&category=DON"
                 },
                 {
                     "type": "postback",
                     "label": "麺類",
-                    "data": "action=order&category=MEN"
+                    "data": "action=show_menu&category=MEN"
                 },
                 {
                     "type": "postback",
                     "label": "デザート",
-                    "data": "action=order&category=DES"
+                    "data": "action=show_menu&category=DES"
                 },
                 {
                     "type": "postback",
