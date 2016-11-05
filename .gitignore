@@ -55,4 +55,4 @@ build-iPhoneSimulator/
 .idea
 LINE_bot_practice.iml
 .env
-
+*.iml
