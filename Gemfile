@@ -25,3 +25,5 @@ gem "google-cloud-translate"
 
 #gem "mechanize"
 #gem 'dotenv-rails', :groups => [:development, :test]
+
+gem 'faraday'

@@ -131,6 +131,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   docomoru
+  faraday
   google-cloud-translate
   httpclient
   line-bot-api

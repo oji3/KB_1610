@@ -18,8 +18,6 @@ class GooMessage
       context.value['message']['text'] = context.value['message']['text'] + "\n組織:#{val}" if cate == 'ORG'
       context.value['message']['text'] = context.value['message']['text'] + "\n人名:#{val}" if cate == 'PSN'
       context.value['message']['text'] = context.value['message']['text'] + "\n時刻:#{val}" if cate == 'TIM'
-
-
     end
 
     {
