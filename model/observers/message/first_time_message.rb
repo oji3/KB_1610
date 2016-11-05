@@ -1,17 +1,24 @@
 
-class WelcomeMessage
+class FirstTimeMessage
   def update(changed_callback)
     event = changed_callback.event
 
-    if event.message['text'].include?("はじめての方へ")
-      Reply.reply(event, output)
+    if Message.is_postback?(event)
+      hash = Message.convert_hash(event)
+      if hash['action'] == 'first_time'
+        Message.reply(event, output)
+      end
+    elsif Message.is_message?(event)
+      if event.message['text'].include?("はじめて")
+        Message.reply(event, output)
+      end
     end
   end
 
   def output
     {
         "type": "template",
-        "altText": "this is a buttons template",
+        "altText": "this is a first time message",
         "template": {
             "type": "buttons",
             "title": "はじめての方へ",
@@ -20,7 +27,7 @@ class WelcomeMessage
                 {
                     "type": "postback",
                     "label": "もどる",
-                    "data": "action=buy&itemid=123"
+                    "data": "action=welcome&itemid=123"
                 }
             ]
         }
