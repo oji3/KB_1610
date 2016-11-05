@@ -99,12 +99,12 @@ post '/callback' do
         client.reply_message(event['replyToken'], message.output_message)
       when Line::Bot::Event::Message
         # puts event.source
+
         message = MessageContext.new(ResponceMessage.new, event)
 
         case event.type
           when Line::Bot::Event::MessageType::Text
             res = client.reply_message(event['replyToken'], message.output_message)
-            p res
           when Line::Bot::Event::MessageType::Image, Line::Bot::Event::MessageType::Video
             response = client.get_message_content(event.message['id'])
             tf = Tempfile.open("content")
