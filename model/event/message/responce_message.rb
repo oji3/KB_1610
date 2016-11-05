@@ -37,11 +37,11 @@ class ResponceMessage
       message = MessageContext.new(TranslateMessage.new, event)
     elsif text.include?("入店")
       OrderGroup.create(:enter => true,
-                        :start_time => Time.now,
-                        :end_time => Time.now + 60*60*2,
-                        :table => 1,
-                        :user_id => event['source']["userId"]
-      )
+        :start_time => Time.now,
+        :end_time => Time.now + 60*60*2,
+        :table => 1,
+        :user_id => event['source']["userId"]
+        )
       message = MessageContext.new(DefaultMessage.new, event)
     elsif text.include?("退店")
       mygroup = OrderGroup.where(:user_id => event['source']["userId"])
@@ -49,6 +49,8 @@ class ResponceMessage
       message = MessageContext.new(DefaultMessage.new, event)
     elsif text.include?("店選び")
       message = MessageContext.new(GooMessage.new, event)
+    elsif text.include?("ぐるなび")
+      message = MessageContext.new(GuluMessage.new, event)
     else
       message = MessageContext.new(DefaultMessage.new, event)
     end
