@@ -93,7 +93,7 @@ class RichMessage
     #     'https://pbs.twimg.com/media/B5RSK0pCYAA45il.png'
     # ]
     # images.sample
-    num = rand(3..11)
+    num = rand(1..9)
     menu = Menu.find(num)
 end
 end
