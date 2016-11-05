@@ -22,17 +22,6 @@ class ResponceMessage
       message = MessageContext.new(ConfirmMessage.new)
     elsif text.include?("ミーティング")
       message = MessageContext.new(MeetingMessage.new)
-    elsif text.include?("注文")
-      if OrderGroup.exists?(:user_id => event['source']["userId"])
-        mygroup = OrderGroup.where(:user_id => event['source']["userId"]).last
-        if mygroup.enter == true
-          message = MessageContext.new(OrderMessage.new)
-        else
-          message = MessageContext.new(ShowOrderMessage.new)
-        end
-      else
-        message = MessageContext.new(ShowOrderMessage.new)
-      end
     elsif text.include?("翻訳")
       message = MessageContext.new(TranslateMessage.new, event)
     elsif text.include?("入店")
