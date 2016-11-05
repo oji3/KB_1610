@@ -2,7 +2,7 @@ class ShowMenuMessage
   def update(changed_callback)
     event = changed_callback.event
     category_jp = ''
-    @exist_group_id = OrderGroup.exists?(:user_id => event['source']["userId"])
+    @exist_group_id = OrderGroup.where(:line_group_id => event['source']["groupId"]).last
 
     if Message.is_postback?(event)
       hash = Message.convert_hash(event)
@@ -43,7 +43,7 @@ class ShowMenuMessage
 
   def make_colums(category)
     colums = []
-    for m in Menu.where('category': category)
+    for m in Menu.where(:category => category)
       actions = make_actions(m.id.to_s)
       colums.append(
           {
@@ -60,8 +60,7 @@ class ShowMenuMessage
   def make_actions(id)
     actions = []
     if @exist_group_id
-      mygroup = @exist_group_id.last
-      if mygroup.enter
+      if @exist_group_id['enter']
         actions.push(
             {
                 "type": "postback",
