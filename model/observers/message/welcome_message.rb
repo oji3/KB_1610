@@ -26,7 +26,7 @@ class WelcomeMessage
                 {
                     "type": "postback",
                     "label": "メニュー",
-                    "data": "action=buy&itemid=123"
+                    "data": "action=show_menu_category"
                 },
                 {
                     "type": "postback",
