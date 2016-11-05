@@ -24,9 +24,6 @@ configure :development do
   ActiveRecord::Base.establish_connection(:development)
 end
 
-class Menu < ActiveRecord::Base
-end
-
 def client
   @client ||= Line::Bot::Client.new { |config|
     config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
