@@ -574,6 +574,17 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="seed-fu (vbundled(2.3.6), /Users/kazutaka/IdeaProjects/KB_1610/vendor/bundle/ruby/2.2.0/gems/seed-fu-2.3.6) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.2.0/gems/seed-fu-2.3.6/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.2.0/gems/seed-fu-2.3.6/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="signet (vbundled(0.7.3), /Users/kazutaka/IdeaProjects/KB_1610/vendor/bundle/ruby/2.2.0/gems/signet-0.7.3) [path][gem]">
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.2.0/gems/signet-0.7.3/lib" />

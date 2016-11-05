@@ -23,5 +23,7 @@ gem "sinatra-activerecord", :require => 'sinatra/activerecord'
 
 gem "google-cloud-translate"
 
+gem 'seed-fu', '~> 2.3'
+
 #gem "mechanize"
 #gem 'dotenv-rails', :groups => [:development, :test]
