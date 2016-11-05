@@ -91,8 +91,6 @@ post '/callback' do
     callback_observer.event = event
   }
 
-  exit 1
-
   events.each { |event|
     case event
       when Line::Bot::Event::Postback
